@@ -1,0 +1,5 @@
+.user
+	.user-image= link_to image_tag(user.image), user.profile_url
+	.user-main
+		.username= link_to user.username, user.profile_url
+		.user-blog= link_to user.blog_url, user.blog_url

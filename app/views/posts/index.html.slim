@@ -1,0 +1,8 @@
+.container
+	.column
+		.questions
+			= render partial: 'posts/question', collection: @questions, as: :post
+	.column
+		.show-question
+	.column
+		.related-questions

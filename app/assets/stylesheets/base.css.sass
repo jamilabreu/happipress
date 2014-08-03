@@ -1,0 +1,79 @@
+@import bourbon
+@import neat
+@import neat-helpers
+@import octicons
+@import font-awesome
+
+// GRID
+// $column: 12%
+// $gutter: 0
+// $grid-columns: 12
+$max-width: 100%
+
+// $mobile: new-breakpoint(max-width 480px 4)
+
+// VARIABLES
+$sans-serif: "proxima-nova", "Helvetica Neue", sans-serif
+$brandon-grotesque: "brandon-grotesque", $sans-serif
+
+$border-radius: 2px
+$rhythm: 16px
+
+$black: #333
+$blue: #01579B
+$gray: #666
+$green: #47970E
+$red: #EB001B
+
+// STYLES
+::-moz-selection
+	background: tint($red, 90%)
+
+::selection
+	background: tint($red, 90%)
+
+a
+	color: $blue
+	text-decoration: none
+
+img
+	display: block
+
+li
+	list-style: none
+
+ul
+	margin: 0
+	padding: 0
+
+// MIXINS
+@mixin clearfix
+	&:after
+		content: ""
+		display: table
+		clear: both
+
+@mixin ellipsis
+	overflow: hidden
+	text-overflow: ellipsis
+	white-space: nowrap
+
+@mixin button($color, $shadow-length: 3px)
+	background: $color
+	color: white
+	font-family: $brandon-grotesque
+	font-size: 20px
+	font-weight: 300
+	letter-spacing: 1px
+	line-height: $rhythm * 2
+	padding: 0 $rhythm 2px
+
+@mixin placeholder($color)
+	&::-webkit-input-placeholder
+		color: $color
+	&:-moz-placeholder
+		color: $color
+	&::-moz-placeholder
+		color: $color
+	&:-ms-input-placeholder
+		color: $color

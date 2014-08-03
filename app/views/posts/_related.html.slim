@@ -1,0 +1,4 @@
+.related-question id=(post.id)
+	= link_to related_responses_path(post), remote: true do
+		= post.title
+		span= post.children.count

@@ -1,0 +1,7 @@
+if ( $("#<%= @post.id %>").hasClass("is-open") ) {
+	$("#<%= @post.id %>").next().hide();
+} else {
+	$("#<%= @post.id %>").after("<%= j render partial: 'posts/related_responses', locals: { post: @post } %>");
+}
+
+$("#<%= @post.id %>").toggleClass("is-open");

@@ -1,0 +1,5 @@
+.question class=('active' if @question == post)
+	= link_to post_path(post) do
+		.question-count class=('unanswered' if post.children.count == 0)
+			span= post.children.count
+		.question-title= post.title

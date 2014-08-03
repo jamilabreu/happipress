@@ -1,0 +1,3 @@
+.show-question-response class=('by_creator' if post.user == user )
+	= render partial: 'posts/user', locals: { user: post.user }
+	= post.summary.html_safe

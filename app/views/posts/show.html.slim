@@ -1,0 +1,20 @@
+.container
+	.three-columns
+		.questions
+			= render partial: 'posts/question', object: @question, as: :post
+			= render partial: 'posts/question', collection: @questions, as: :post
+	.five-columns
+		.show-question
+			h1
+				= @question.title
+				= link_to @question.url do
+					span.mega-octicon.octicon-link-external
+			.show-question-box
+				= render partial: 'posts/user', locals: { user: @question.user }
+				= @question.summary.html_safe
+		.show-question-responses
+			= render partial: 'posts/question_responses', collection: @responses, as: :post, locals: { user: @question.user }
+	.four-columns
+		/ div= @query
+		.related-questions
+			= render partial: 'posts/related', collection: @search.results.select { |x| x.title.present? && x.children.count > 0 } , as: :post

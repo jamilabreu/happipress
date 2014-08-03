@@ -1,0 +1,8 @@
+.related-question-box
+	.related-question-summary
+		= render partial: 'posts/user', locals: { user: post.user }
+		= post.summary.html_safe
+	- post.children.each do |response|
+		.show-question-response
+			= render partial: 'posts/user', locals: { user: response.user }
+			= response.summary.html_safe

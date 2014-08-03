@@ -1,0 +1,250 @@
+@import base
+
+body
+	color: $black
+	font-family: $sans-serif
+	-webkit-font-smoothing: antialiased
+
+blockquote
+	background: white
+	border: 1px solid tint($blue, 90%)
+	border-radius: 6px
+	color: $black
+	font-weight: 600
+	margin: 16px 0 0 0
+	padding: 8px 16px
+	p
+		margin: 0
+
+p
+	margin-bottom: 0
+	margin-top: 10px
+
+// GRID
+.container
+	@include outer-container
+
+.two-columns
+	@include span-columns(2)
+
+.three-columns
+	@include span-columns(3)
+
+.four-columns
+	@include span-columns(4)
+
+.five-columns
+	@include span-columns(5)
+
+.six-columns
+	@include span-columns(6)
+
+// QUESTIONS
+.question
+	background: whiteSmoke
+	border-bottom: 1px solid #DDD
+	border-right: 1px solid #DDD
+	a
+		color: #333
+		display: block
+		padding: 16px
+	&.active
+		background: white
+		border-right-color: white
+		box-shadow: 0 4px 4px -5px rgba(0,0,0,0.2), 0 -4px 4px -5px rgba(0,0,0,0.2)
+		position: relative
+		a
+			color: $blue
+		.question-count
+			span
+				background: $blue
+
+.question-count
+	color: white
+	display: table-cell
+	font-size: 32px
+	text-align: center
+	width: 37px
+	vertical-align: middle
+	span
+		background: #DDD
+		border-radius: 3px
+		display: block
+	&.unanswered
+		span
+			background: $green
+
+.question-title
+	display: table-cell
+	padding-left: 20px
+	vertical-align: middle
+
+// SHOW
+.show-question
+	font-size: 17px
+	h1
+		span
+			color: #CCC
+			margin-left: 16px
+
+.show-question-box
+	border: 1px solid #EEE
+	border-radius: 6px
+	margin-bottom: 16px
+	padding: 20px
+
+.user
+	@include clearfix
+	border-bottom: 1px solid #EEE
+	font-size: 14px
+	padding-bottom: 16px
+
+.user-image
+	float: left
+	height: 34px
+	width: 34px
+	img
+		border-radius: 3px
+		height: 100%
+		width: 100%
+
+.user-main
+	margin-left: 45px
+	a
+		color: #666
+
+.username
+	font-weight: 600
+
+// RESPONSE
+.show-question-response
+	background: tint($blue, 99%)
+	border: 1px solid tint($blue, 90%)
+	border-radius: 6px
+	margin-bottom: 16px
+	padding: 20px
+	&.by_creator
+		background: white
+	.username
+		a
+			color: $blue
+	.user-blog
+		a
+			color: tint($blue, 50%)
+	.user
+		border-bottom: 1px solid tint($blue, 90%)
+
+.related-questions
+	border: 1px solid tint($blue, 90%)
+	border-radius: 6px
+	margin: 16px 16px 0 0
+
+.related-question
+	background: tint($blue, 99%)
+	border-bottom: 1px solid tint($blue, 90%)
+	font-weight: 600
+	&:first-child
+		border-top-left-radius: 6px
+		border-top-right-radius: 6px
+	&:last-child
+		border: none
+		border-bottom-left-radius: 6px
+		border-bottom-right-radius: 6px
+	&.is-open
+		background: tint($blue, 96%)
+	a
+		display: block
+		padding: 16px
+		span
+			color: tint($blue, 70%)
+			margin-left: 8px
+
+.related-question-box
+	background: white
+	border-bottom: 1px solid tint($blue, 90%)
+	font-size: 14px
+	padding: 16px
+	.show-question-response
+		margin-top: 16px
+		padding: 16px
+
+// .related-question-response
+// 	background: tint($blue, 99%)
+// 	border: 1px solid tint($blue, 90%)
+// 	border-radius: 6px
+// 	margin-top: 16px
+// 	padding: 16px
+// 	.user
+// 		border-bottom: 1px solid tint($blue, 90%)
+
+// 	&:not(:last-child), &:not(:first-child)
+// 		// border-bottom: 1px solid tint($blue, 90%)
+// 		// padding-bottom: 16px
+// // .related-question-summary
+
+// .related-response
+// 	font-size: 12px
+// QUESTIONS
+// .questions
+// 	.post
+// 		a
+// 			background: whiteSmoke
+// 			border-bottom: 1px solid #DDD
+// 			border-right: 1px solid #DDD
+// 			padding: 16px 32px
+// 			.post.selected
+// 				background: white
+// 				border-right: 1px solid white
+// 			.post-title
+// 				display: table-cell
+// 				padding-left: 16px
+// 				vertical-align: middle
+// 				a
+// 					color: #666
+// 				span
+// 					color: #999
+// 					margin-left: 8px
+// 			.post-answer-count
+// 				display: table-cell
+// 				vertical-align: middle
+// 				span
+// 					background: #DDD
+// 					border-radius: 4px
+// 					color: white
+// 					display: block
+// 					font-size: 32px
+// 					text-align: center
+// 					width: 37px
+
+// .question
+// 	// background: yellow
+// 	// padding: 16px
+// 	border-bottom: 1px solid #DDD
+
+// .response
+// 	background: yellow
+// 	padding: 16px
+
+// .related-questions
+
+// .related
+// 	background: tint($blue, 85%)
+// 	color: $blue
+// 	margin: 0 0 1px
+// 	padding: 16px
+
+// .related-title
+// 	display: table-cell
+// 	vertical-align: middle
+
+// .related-icon
+// 	display: table-cell
+// 	float: right
+// 	vertical-align: middle
+// 	span
+// 		color: white
+
+// .related-response
+// 	border: 1px solid #DDD
+// 	margin-top: 16px
+// 	padding: 16px
